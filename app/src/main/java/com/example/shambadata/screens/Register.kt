@@ -2,18 +2,15 @@ package com.example.shambadata.screens
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
-import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -22,11 +19,10 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.example.shambadata.R
 import com.example.shambadata.ui.theme.ShambaDataTheme
 
 @Composable
-fun LoginScreen(navController:NavHostController) {
+fun Register(navController: NavHostController? = null){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -34,23 +30,35 @@ fun LoginScreen(navController:NavHostController) {
             .padding(16.dp),
         verticalArrangement = Arrangement.Center
 
-    ) {
-
-        Image(
-            painter = painterResource(id = R.drawable.ic_cow_grass),
-            contentDescription = null,
-            alignment = Alignment.Center
-        )
+    ){
 
         Text(
-            text = "Sign in",
-            style = typography.h6,
+            text = "Register",
+            style = MaterialTheme.typography.h6,
             modifier = Modifier
                 .padding(8.dp)
                 .align(alignment = Alignment.CenterHorizontally),
             color = MaterialTheme.colors.onBackground
         )
         var text by remember { mutableStateOf(TextFieldValue("")) }
+
+        OutlinedTextField(
+            value = text,
+            modifier = Modifier
+                .padding(8.dp)
+                .fillMaxWidth(),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+            label = { Text(text = "Username") },
+            placeholder = { Text(text = "Username") },
+            onValueChange = {
+                text = it
+            },
+            textStyle = TextStyle(
+                color = MaterialTheme.colors.onPrimary,
+                fontWeight = FontWeight.Bold
+            )
+        )
+
 
         OutlinedTextField(
             value = text,
@@ -70,6 +78,38 @@ fun LoginScreen(navController:NavHostController) {
             )
         )
 
+        OutlinedTextField(
+            value = text,
+            modifier = Modifier
+                .padding(8.dp)
+                .fillMaxWidth(),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+            label = { Text(text = "First Name") },
+            placeholder = { Text(text = "First Name") },
+            onValueChange = {
+                text = it
+            },
+            textStyle = TextStyle(
+                color = MaterialTheme.colors.onPrimary,
+                fontWeight = FontWeight.Bold
+            )
+        )
+        OutlinedTextField(
+            value = text,
+            modifier = Modifier
+                .padding(8.dp)
+                .fillMaxWidth(),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+            label = { Text(text = "Last Name") },
+            placeholder = { Text(text = "Last Name") },
+            onValueChange = {
+                text = it
+            },
+            textStyle = TextStyle(
+                color = MaterialTheme.colors.onPrimary,
+                fontWeight = FontWeight.Bold
+            )
+        )
         // Outlined Text Input Field
         OutlinedTextField(
             value = text,
@@ -85,24 +125,38 @@ fun LoginScreen(navController:NavHostController) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
         )
 
+
+        OutlinedTextField(
+            value = text,
+            modifier = Modifier
+                .padding(8.dp)
+                .fillMaxWidth(),
+            label = { Text(text = "Confirm Password") },
+            placeholder = { Text(text = "12334444") },
+            visualTransformation = PasswordVisualTransformation(),
+            onValueChange = {
+                text = it
+            },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+        )
+
         Button(
-            onClick = { navController.navigate("Register")},
+            onClick = { /*TODO*/ },
             modifier = Modifier
                 .fillMaxWidth()
                 .align(alignment = Alignment.CenterHorizontally),
 
-        ) {
-            Text(text = "Sign in", color = MaterialTheme.colors.onPrimary)
+            ) {
+            Text(text = "Register", color = MaterialTheme.colors.onPrimary)
         }
-
     }
 }
 
-//@Preview(name = "night", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
-//@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO, showBackground = true)
-//@Composable()
-//fun LoginScreenPreview() {
-//    ShambaDataTheme {
-//        LoginScreen(navController = )
-//    }
-//}
+@Composable
+@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO)
+@Preview(name = "night", uiMode = UI_MODE_NIGHT_YES)
+fun RegisterPreview(navController: NavHostController? = null){
+    ShambaDataTheme {
+        Register()
+    }
+}

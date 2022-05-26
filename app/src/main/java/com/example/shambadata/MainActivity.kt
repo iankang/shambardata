@@ -12,6 +12,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.shambadata.navigation.NavRoutes
+import com.example.shambadata.screens.LoginScreen
+import com.example.shambadata.screens.Register
 import com.example.shambadata.ui.theme.ShambaDataTheme
 import com.example.shambadataapi.models.ShambaDataResponse
 import com.example.shambadataapi.models.SigninResponse
@@ -32,18 +38,30 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+                    val navController = rememberNavController()
 
-                    val shambaState by produceState(initialValue = ShambaDataResponse<SigninResponse>()) {
-                        val response =
-                            shambaDataApi.signin(SigninRequest("ianngech@gmail.com", "kangethe"))
-                        value = response
+                    NavHost(navController = navController,
+                        startDestination = NavRoutes.Login.route,){
+                        composable(NavRoutes.Login.route){
+                            LoginScreen(navController = navController)
+                        }
+                        composable(NavRoutes.Register.route){
+                            Register()
+                        }
+
                     }
-                    if(shambaState.isOk){
-                        Greeting(shambaState.data.toString())
-                    }
-                    if(shambaState.isOk == false){
-                        Greeting("loading")
-                    }
+
+//                    val shambaState by produceState(initialValue = ShambaDataResponse<SigninResponse>()) {
+//                        val response =
+//                            shambaDataApi.signin(SigninRequest("ianngech@gmail.com", "kangethe"))
+//                        value = response
+//                    }
+//                    if(shambaState.isOk){
+//                        Greeting(shambaState.data.toString())
+//                    }
+//                    if(shambaState.isOk == false){
+//                        Greeting("loading")
+//                    }
                 }
             }
         }
