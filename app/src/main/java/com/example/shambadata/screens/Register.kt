@@ -2,6 +2,7 @@ package com.example.shambadata.screens
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -22,7 +23,7 @@ import androidx.navigation.NavHostController
 import com.example.shambadata.ui.theme.ShambaDataTheme
 
 @Composable
-fun Register(navController: NavHostController? = null){
+fun Register(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -30,7 +31,7 @@ fun Register(navController: NavHostController? = null){
             .padding(16.dp),
         verticalArrangement = Arrangement.Center
 
-    ){
+    ) {
 
         Text(
             text = "Register",
@@ -141,7 +142,10 @@ fun Register(navController: NavHostController? = null){
         )
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = {
+                Log.e("clicked", "Clicked")
+                navController?.navigate("Home")
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .align(alignment = Alignment.CenterHorizontally),
@@ -152,11 +156,11 @@ fun Register(navController: NavHostController? = null){
     }
 }
 
-@Composable
-@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO)
-@Preview(name = "night", uiMode = UI_MODE_NIGHT_YES)
-fun RegisterPreview(navController: NavHostController? = null){
-    ShambaDataTheme {
-        Register()
-    }
-}
+//@Composable
+//@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO)
+//@Preview(name = "night", uiMode = UI_MODE_NIGHT_YES)
+//fun RegisterPreview(navController: NavHostController? = null) {
+//    ShambaDataTheme {
+//        Register(null)
+//    }
+//}

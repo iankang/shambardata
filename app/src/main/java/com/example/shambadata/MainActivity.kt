@@ -8,20 +8,16 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.produceState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.shambadata.navigation.NavRoutes
+import com.example.shambadata.screens.HomeScreen
 import com.example.shambadata.screens.LoginScreen
 import com.example.shambadata.screens.Register
 import com.example.shambadata.ui.theme.ShambaDataTheme
-import com.example.shambadataapi.models.ShambaDataResponse
-import com.example.shambadataapi.models.SigninResponse
-import com.example.shambadataapi.models.requests.SigninRequest
 import com.example.shambadataapi.repository.ShambaDataApi
 import org.koin.android.ext.android.inject
 
@@ -40,13 +36,18 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val navController = rememberNavController()
 
-                    NavHost(navController = navController,
-                        startDestination = NavRoutes.Login.route,){
-                        composable(NavRoutes.Login.route){
+                    NavHost(
+                        navController = navController,
+                        startDestination = NavRoutes.Login.route,
+                    ) {
+                        composable(NavRoutes.Login.route) {
                             LoginScreen(navController = navController)
                         }
-                        composable(NavRoutes.Register.route){
-                            Register()
+                        composable(NavRoutes.Register.route) {
+                            Register(navController = navController)
+                        }
+                        composable(NavRoutes.Home.route) {
+                            HomeScreen()
                         }
 
                     }
