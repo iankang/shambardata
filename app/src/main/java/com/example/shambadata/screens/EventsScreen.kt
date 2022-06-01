@@ -15,6 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import com.example.shambadata.ui.theme.ShambaDataTheme
 
 @Composable
 fun EventsScreen() {
@@ -25,7 +26,7 @@ fun EventsScreen() {
             .wrapContentSize(Alignment.Center)
     ) {
         Text(
-            text = "Events View",
+            text ="Eventd",
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colors.onBackground,
             modifier = Modifier.align(Alignment.CenterHorizontally),
@@ -39,5 +40,8 @@ fun EventsScreen() {
 @Preview(name = "night", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 fun EventsScreenPreview() {
-    EventsScreen()
+    ShambaDataTheme {
+        EventsScreen()
+    }
+
 }

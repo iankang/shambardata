@@ -1,8 +1,11 @@
 package com.example.shambadataapi.di
 
+import android.content.Context
 import android.os.Build
 import com.example.shambadataapi.api.ShambaDataRequests
+import com.example.shambadataapi.utils.AuthenticationInterceptor
 import com.example.shambadataapi.utils.Constants.SHAMBA_DATA_BASE_URL
+import com.example.shambadataapi.utils.SessionManager
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,7 +16,7 @@ import java.time.Duration
 
 val shambaDataModule = module {
     factory { provideOkHttpClientInterceptor() }
-    factory { provideOkHttpClient(get()) }
+    factory { provideOkHttpClient(get(),get()) }
     factory { provideRetrofit(get()) }
 //    factory { interceptor }
     single { provideShambaDataApi(get()) }
@@ -41,11 +44,12 @@ fun provideOkHttpClientInterceptor(): HttpLoggingInterceptor {
 //}
 
 
-fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor):OkHttpClient{
+fun provideOkHttpClient(context: Context,httpLoggingInterceptor: HttpLoggingInterceptor):OkHttpClient{
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
         OkHttpClient()
             .newBuilder()
             .addInterceptor(httpLoggingInterceptor)
+            .addInterceptor(AuthenticationInterceptor(context))
             .readTimeout(Duration.ofMinutes(2))
             .build()
     } else {

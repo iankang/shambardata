@@ -10,9 +10,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.shambadata.navigation.BottomNavigation
+import com.example.shambadata.ui.theme.ShambaDataTheme
 
 @Composable
 fun BottomNavigationBar(navController: NavController?) {
@@ -25,7 +27,8 @@ fun BottomNavigationBar(navController: NavController?) {
 
     BottomNavigation(
         backgroundColor = MaterialTheme.colors.background,
-        contentColor = MaterialTheme.colors.onBackground
+        contentColor = MaterialTheme.colors.onBackground,
+        elevation = 12.dp
     ) {
 
         val navBackStackEntry by navController?.currentBackStackEntryAsState()!!
@@ -66,10 +69,13 @@ fun BottomNavigationBar(navController: NavController?) {
         }
     }
 
-    @Preview(name = "day", uiMode = UI_MODE_NIGHT_NO, showBackground = true)
-    @Preview(name = "dark", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
-    @Composable
-    fun BottomNavigationBarPreview() {
+}
+
+@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO, showBackground = true)
+@Preview(name = "dark", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
+@Composable
+fun BottomNavigationBarPreview() {
+    ShambaDataTheme {
         BottomNavigationBar(null)
     }
 }

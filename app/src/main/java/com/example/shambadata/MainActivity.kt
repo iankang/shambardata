@@ -19,14 +19,18 @@ import com.example.shambadata.screens.LoginScreen
 import com.example.shambadata.screens.Register
 import com.example.shambadata.ui.theme.ShambaDataTheme
 import com.example.shambadataapi.repository.ShambaDataApi
+import com.example.shambadataapi.utils.SessionManager
 import org.koin.android.ext.android.inject
 
 class MainActivity : ComponentActivity() {
 
     private val shambaDataApi: ShambaDataApi by inject()
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        sessionManager = SessionManager(this)
+
         setContent {
             ShambaDataTheme {
                 // A surface container using the 'background' color from the theme
@@ -41,7 +45,11 @@ class MainActivity : ComponentActivity() {
                         startDestination = NavRoutes.Login.route,
                     ) {
                         composable(NavRoutes.Login.route) {
-                            LoginScreen(navController = navController)
+                            LoginScreen(
+                                navController = navController,
+                                shambaDataApi,
+                                sessionManager
+                            )
                         }
                         composable(NavRoutes.Register.route) {
                             Register(navController = navController)
@@ -52,32 +60,9 @@ class MainActivity : ComponentActivity() {
 
                     }
 
-//                    val shambaState by produceState(initialValue = ShambaDataResponse<SigninResponse>()) {
-//                        val response =
-//                            shambaDataApi.signin(SigninRequest("ianngech@gmail.com", "kangethe"))
-//                        value = response
-//                    }
-//                    if(shambaState.isOk){
-//                        Greeting(shambaState.data.toString())
-//                    }
-//                    if(shambaState.isOk == false){
-//                        Greeting("loading")
-//                    }
+
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ShambaDataTheme {
-        Greeting("Android")
     }
 }

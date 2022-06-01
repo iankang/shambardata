@@ -14,6 +14,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import com.example.shambadata.ui.theme.ShambaDataTheme
 
 @Composable
 fun StatsScreen() {
@@ -38,5 +39,8 @@ fun StatsScreen() {
 @Preview(name = "night", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 fun StatsScreenPreview() {
-    StatsScreen()
+    ShambaDataTheme {
+        StatsScreen()
+    }
+
 }
