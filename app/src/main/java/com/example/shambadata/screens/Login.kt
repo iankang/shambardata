@@ -42,7 +42,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun LoginScreen(
     navController: NavController,
-    loginViewModel: LoginViewModel
+    loginViewModel: LoginViewModel,
+    sessionManager: SessionManager
 ) {
 
     val apiState  = loginViewModel.loginState
@@ -123,6 +124,7 @@ fun LoginScreen(
                     loginViewModel.loginRequest(usernameText.text, passwordText.text)
                     if(apiState.value.isOk){
                         navController.navigate("main")
+                        sessionManager.saveAuthToken(apiState.value.data?.accessToken!!)
                     }
                 }
 
@@ -138,14 +140,6 @@ fun LoginScreen(
 
     }
 
-
-//    if(apiState.value.isOk){
-//        navController.navigate("main")
-//    }
-//
-//    if(!apiState.value.isOk){
-//        Log.e("Error", apiState.value.message)
-//    }
 }
 
 @Composable

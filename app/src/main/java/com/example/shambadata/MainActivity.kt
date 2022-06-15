@@ -47,7 +47,8 @@ class MainActivity : ComponentActivity() {
                         composable(AuthNavigationScreens.Login.route) {
                             LoginScreen(
                                 navController,
-                                loginViewModel
+                                loginViewModel,
+                                sessionManager
                             )
                         }
                         composable(AuthNavigationScreens.Register.route) { Register(navController) }
@@ -61,45 +62,3 @@ class MainActivity : ComponentActivity() {
 }
 
 
-fun NavGraphBuilder.loginGraph(
-    navController: NavController,
-    loginViewModel: LoginViewModel
-) {
-
-    composable(NavRoutes.LoginScreen.route) {
-        LoginScreen(
-            navController = navController,
-            loginViewModel = loginViewModel
-        )
-    }
-
-    composable(NavRoutes.RegisterScreen.route) {
-        Register(navController = navController)
-    }
-
-    composable(NavRoutes.AppScaffold.route) {
-        HomeScreen(navController)
-    }
-}
-
-fun NavGraphBuilder.bottomSheetGraph(
-    navController: NavController
-) {
-    navigation(
-        startDestination = BottomNavigation.Events.route,
-        route = NavRoutes.AppScaffold.route
-    ) {
-        composable(BottomNavigation.Events.route) {
-            EventsScreen()
-        }
-        composable(BottomNavigation.Animals.route) {
-            LiveStockScreen()
-        }
-        composable(BottomNavigation.Farms.route) {
-            FarmsScreen()
-        }
-        composable(BottomNavigation.Stats.route) {
-            StatsScreen()
-        }
-    }
-}

@@ -1,14 +1,13 @@
 package com.example.shambadataapi.api
 
+import com.example.shambadataapi.models.FarmsResponse
 import com.example.shambadataapi.models.SigninResponse
 import com.example.shambadataapi.models.SignupResponse
 import com.example.shambadataapi.models.UsernameAvailabilityResponse
 import com.example.shambadataapi.models.requests.SignUpRequest
 import com.example.shambadataapi.models.requests.SigninRequest
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface ShambaDataRequests {
 
@@ -27,4 +26,9 @@ interface ShambaDataRequests {
     suspend fun checkEmail(
         @Query("email") email: String
     ): Response<UsernameAvailabilityResponse>
+
+    @GET("/farm/{userId}/getFarms")
+    suspend fun getFarms(
+        @Path("userId") userId:Long
+    ):Response<FarmsResponse>
 }
