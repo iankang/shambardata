@@ -2,7 +2,10 @@ package com.example.shambadata.screens
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
+import android.graphics.drawable.Icon
+import android.media.Image
 import android.util.Log
+import android.widget.Button
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -12,6 +15,7 @@ import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.runtime.*
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -22,21 +26,27 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.shambadata.R
+import com.example.shambadata.navigation.NavRoutes
 import com.example.shambadata.ui.theme.ShambaDataTheme
+import com.example.shambadata.viewmodels.LoginViewModel
 import com.example.shambadataapi.utils.SessionManager
 import com.example.shambadataapi.models.ShambaDataResponse
 import com.example.shambadataapi.models.SigninResponse
 import com.example.shambadataapi.models.requests.SigninRequest
 import com.example.shambadataapi.repository.ShambaDataApi
+import kotlinx.coroutines.launch
 
 @Composable
 fun LoginScreen(
-    navController: NavHostController?,
-    shambaDataApi: ShambaDataApi?,
-    sessionManager: SessionManager?
+    navController: NavController,
+    loginViewModel: LoginViewModel
 ) {
+
+    val apiState  = loginViewModel.loginState
+    val coroutineScope = rememberCoroutineScope()
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -50,9 +60,9 @@ fun LoginScreen(
         var buttonClicked by remember{ mutableStateOf<Boolean>(false)}
 
 
-        if(sessionManager?.fetchAuthToken()!= null){
-            navController?.navigate("Home")
-        }
+//        if(sessionManager?.fetchAuthToken()!= null){
+//            navController?.navigate(NavRoutes.AppScaffold.route)
+//        }
         Image(
             painter = painterResource(id = R.drawable.ic_cow_grass),
             contentDescription = null,
@@ -87,7 +97,7 @@ fun LoginScreen(
             onValueChange = {
                 usernameText = it
             },
-            textStyle = TextStyle(
+            textStyle = androidx.compose.ui.text.TextStyle(
                 color = MaterialTheme.colors.onPrimary,
                 fontWeight = FontWeight.Bold
             )
@@ -109,8 +119,13 @@ fun LoginScreen(
 
         Button(
             onClick = {
-//
-                   buttonClicked = !buttonClicked
+                coroutineScope.launch {
+                    loginViewModel.loginRequest(usernameText.text, passwordText.text)
+                    if(apiState.value.isOk){
+                        navController.navigate("main")
+                    }
+                }
+
             },
             modifier = Modifier
                 .fillMaxWidth()
@@ -118,28 +133,19 @@ fun LoginScreen(
             contentPadding = PaddingValues(8.dp),
             colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary)
         ) {
-            if(buttonClicked) {
-                val apiState by loginUser(
-                    shambaDataApi,
-                    username = usernameText.text,
-                    password = passwordText.text
-                )
-                if(apiState.isOk){
-                    //save the token to shared pref.
-                    sessionManager?.saveAuthToken(apiState.data?.accessToken!!)
-                    navController?.navigate("Home")
-                }
-
-                if(!apiState.isOk){
-                    Log.e("Error", apiState.message)
-                }
-
-
-            }
             Text(text = "Sign in", color = MaterialTheme.colors.onSecondary)
         }
 
     }
+
+
+//    if(apiState.value.isOk){
+//        navController.navigate("main")
+//    }
+//
+//    if(!apiState.value.isOk){
+//        Log.e("Error", apiState.value.message)
+//    }
 }
 
 @Composable
@@ -157,11 +163,11 @@ fun loginUser(
     }
 }
 
-@Preview(name = "night", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
-@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO, showBackground = true)
-@Composable()
-fun LoginScreenPreview() {
-    ShambaDataTheme {
-        LoginScreen(navController = null, shambaDataApi = null, sessionManager = null)
-    }
-}
+//@Preview(name = "night", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
+//@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO, showBackground = true)
+//@Composable()
+//fun LoginScreenPreview() {
+//    ShambaDataTheme {
+//        LoginScreen(navController = null, shambaDataApi = null, sessionManager = null)
+//    }
+//}

@@ -19,11 +19,12 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.shambadata.ui.theme.ShambaDataTheme
 
 @Composable
-fun Register(navController: NavHostController?) {
+fun Register(navController: NavController?) {
     Column(
         modifier = Modifier
             .fillMaxSize()

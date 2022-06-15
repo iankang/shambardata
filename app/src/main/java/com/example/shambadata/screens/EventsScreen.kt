@@ -26,7 +26,7 @@ fun EventsScreen() {
             .wrapContentSize(Alignment.Center)
     ) {
         Text(
-            text ="Eventd",
+            text ="Events",
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colors.onBackground,
             modifier = Modifier.align(Alignment.CenterHorizontally),

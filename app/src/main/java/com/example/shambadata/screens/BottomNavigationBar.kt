@@ -7,17 +7,19 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.shambadata.navigation.BottomNavigation
 import com.example.shambadata.ui.theme.ShambaDataTheme
 
 @Composable
-fun BottomNavigationBar(navController: NavController?) {
+fun BottomNavigationBar(navController: NavHostController) {
     val items = listOf(
         BottomNavigation.Events,
         BottomNavigation.Animals,
@@ -31,7 +33,7 @@ fun BottomNavigationBar(navController: NavController?) {
         elevation = 12.dp
     ) {
 
-        val navBackStackEntry by navController?.currentBackStackEntryAsState()!!
+        val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
 
         items.forEach { item ->
@@ -45,25 +47,13 @@ fun BottomNavigationBar(navController: NavController?) {
                     )
                 },
                 label = { Text(text = item.title, color = MaterialTheme.colors.onBackground) },
-                selectedContentColor = Color.White,
-                unselectedContentColor = Color.White.copy(0.4f),
+                selectedContentColor = MaterialTheme.colors.secondary,
+                unselectedContentColor = MaterialTheme.colors.secondary.copy(0.4f),
                 alwaysShowLabel = true,
                 selected = currentRoute == item.route,
                 onClick = {
-                    navController?.navigate(item.route) {
-                        // Pop up to the start destination of the graph to
-                        // avoid building up a large stack of destinations
-                        // on the back stack as users select items
-                        navController.graph.startDestinationRoute?.let { route ->
-                            popUpTo(route) {
-                                saveState = true
-                            }
-                        }
-                        // Avoid multiple copies of the same destination when
-                        // reselecting the same item
-                        launchSingleTop = true
-                        // Restore state when reselecting a previously selected item
-                        restoreState = true
+                    if (currentRoute != item.route) {
+                        navController.navigate(item.route)
                     }
                 })
         }
@@ -71,11 +61,11 @@ fun BottomNavigationBar(navController: NavController?) {
 
 }
 
-@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO, showBackground = true)
-@Preview(name = "dark", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
-@Composable
-fun BottomNavigationBarPreview() {
-    ShambaDataTheme {
-        BottomNavigationBar(null)
-    }
-}
+//@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO, showBackground = true)
+//@Preview(name = "dark", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
+//@Composable
+//fun BottomNavigationBarPreview() {
+//    ShambaDataTheme {
+//        BottomNavigationBar(null)
+//    }
+//}

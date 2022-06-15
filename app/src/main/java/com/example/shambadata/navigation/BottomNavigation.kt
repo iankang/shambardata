@@ -18,21 +18,25 @@ sealed class BottomNavigation(var route:String, var icon:Int, var title:String){
     object Stats:BottomNavigation("stats",R.drawable.ic_baseline_auto_graph_24,"Stats")
 }
 
-
 @Composable
-fun Navigation(navController: NavHostController){
+fun MainNavHost(
+    authController: NavController,
+    navController:NavHostController
+){
     NavHost(navController = navController, startDestination = BottomNavigation.Events.route ){
-        composable(BottomNavigation.Events.route){
+        composable(BottomNavigation.Events.route) {
             EventsScreen()
         }
-        composable(BottomNavigation.Animals.route){
+        composable(BottomNavigation.Animals.route) {
             LiveStockScreen()
         }
-        composable(BottomNavigation.Farms.route){
+        composable(BottomNavigation.Farms.route) {
             FarmsScreen()
         }
-        composable(BottomNavigation.Stats.route){
+        composable(BottomNavigation.Stats.route) {
             StatsScreen()
         }
     }
 }
+
+
