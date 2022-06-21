@@ -8,9 +8,15 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.shambadata.navigation.MainNavHost
+import com.example.shambadata.viewmodels.EventsViewModel
+import com.example.shambadata.viewmodels.FarmViewModel
 
 @Composable
-fun HomeScreen(authController: NavController) {
+fun HomeScreen(
+    authController: NavController,
+    eventsViewModel: EventsViewModel,
+    farmsViewModel: FarmViewModel
+) {
     val navController = rememberNavController()
     val scaffoldState = rememberScaffoldState()
     Scaffold(
@@ -26,7 +32,12 @@ fun HomeScreen(authController: NavController) {
         bottomBar = { BottomNavigationBar(navController) },
         contentColor = MaterialTheme.colors.onBackground
     ) { innerPadding ->
-        MainNavHost(authController = authController, navController = navController)
+        MainNavHost(
+            authController = authController,
+            navController = navController,
+            eventsViewModel = eventsViewModel,
+            farmsViewModel = farmsViewModel
+        )
     }
 }
 

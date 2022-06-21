@@ -7,17 +7,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navigation
 import com.example.shambadata.navigation.AuthNavigationScreens
-import com.example.shambadata.navigation.BottomNavigation
-import com.example.shambadata.navigation.NavRoutes
-import com.example.shambadata.screens.*
+import com.example.shambadata.screens.HomeScreen
+import com.example.shambadata.screens.LoginScreen
+import com.example.shambadata.screens.Register
 import com.example.shambadata.ui.theme.ShambaDataTheme
+import com.example.shambadata.viewmodels.EventsViewModel
+import com.example.shambadata.viewmodels.FarmViewModel
 import com.example.shambadata.viewmodels.LoginViewModel
 import com.example.shambadataapi.repository.ShambaDataApi
 import com.example.shambadataapi.utils.SessionManager
@@ -28,12 +27,15 @@ class MainActivity : ComponentActivity() {
 
     private val shambaDataApi: ShambaDataApi by inject()
     private val loginViewModel by viewModel<LoginViewModel>()
+    private val eventsViewModel by viewModel<EventsViewModel>()
+    private val farmsViewModel by viewModel<FarmViewModel>()
+
+    //    private val values:List<ShambaDataJSONResponse> by inject()
     private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sessionManager = SessionManager(this)
-
         setContent {
             ShambaDataTheme {
                 // A surface container using the 'background' color from the theme
@@ -52,7 +54,13 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(AuthNavigationScreens.Register.route) { Register(navController) }
-                        composable(AuthNavigationScreens.Main.route) { HomeScreen(navController) }
+                        composable(AuthNavigationScreens.Main.route) {
+                            HomeScreen(
+                                navController,
+                                eventsViewModel = eventsViewModel,
+                                farmsViewModel = farmsViewModel
+                            )
+                        }
                     }
                 }
 

@@ -1,0 +1,641 @@
+[
+	{
+		"farm_id": "0",
+		"farmName": "KangFarm",
+		"areaInMetresSquared": "777090",
+		"farm_profile": "shamba",
+		"latitude": "52.458",
+		"longitude": "18.916",
+		"county_code": "33",
+		"schedule": [
+			{
+				"schedule_id": "0",
+				"schedule_activity_name": "dip",
+				"schedule_date": "2022-10-03",
+				"animal_id": "3"
+			},
+			{
+				"schedule_id": "1",
+				"schedule_activity_name": "immunization",
+				"schedule_date": "2022-10-18",
+				"animal_id": "1"
+			},
+			{
+				"schedule_id": "2",
+				"schedule_activity_name": "tagging",
+				"schedule_date": "2022-12-06",
+				"animal_id": "16"
+			},
+			{
+				"schedule_id": "3",
+				"schedule_activity_name": "tagging",
+				"schedule_date": "2022-12-20",
+				"animal_id": "12"
+			},
+			{
+				"schedule_id": "4",
+				"schedule_activity_name": "checkup",
+				"schedule_date": "2022-10-02",
+				"animal_id": "6"
+			},
+			{
+				"schedule_id": "5",
+				"schedule_activity_name": "immunization",
+				"schedule_date": "2022-08-23",
+				"animal_id": "7"
+			},
+			{
+				"schedule_id": "6",
+				"schedule_activity_name": "checkup",
+				"schedule_date": "2022-11-26",
+				"animal_id": "16"
+			},
+			{
+				"schedule_id": "7",
+				"schedule_activity_name": "dip",
+				"schedule_date": "2022-12-27",
+				"animal_id": "18"
+			},
+			{
+				"schedule_id": "8",
+				"schedule_activity_name": "tagging",
+				"schedule_date": "2022-08-04",
+				"animal_id": "7"
+			},
+			{
+				"schedule_id": "9",
+				"schedule_activity_name": "immunization",
+				"schedule_date": "2022-09-16",
+				"animal_id": "13"
+			}
+		],
+		"animals": [
+			{
+				"animal_id": "0",
+				"animal_name_or_tag": "Linet",
+				"dob": "2012-11-28",
+				"sex": "F",
+				"breed": "37"
+			},
+			{
+				"animal_id": "1",
+				"animal_name_or_tag": "Bibby",
+				"dob": "2018-01-26",
+				"sex": "F",
+				"breed": "58"
+			},
+			{
+				"animal_id": "2",
+				"animal_name_or_tag": "Ilse",
+				"dob": "2005-02-18",
+				"sex": "F",
+				"breed": "24"
+			},
+			{
+				"animal_id": "3",
+				"animal_name_or_tag": "Viki",
+				"dob": "2015-04-29",
+				"sex": "M",
+				"breed": "48"
+			},
+			{
+				"animal_id": "4",
+				"animal_name_or_tag": "Kalina",
+				"dob": "2011-08-31",
+				"sex": "M",
+				"breed": "49"
+			},
+			{
+				"animal_id": "5",
+				"animal_name_or_tag": "Ivett",
+				"dob": "2008-04-09",
+				"sex": "M",
+				"breed": "62"
+			},
+			{
+				"animal_id": "6",
+				"animal_name_or_tag": "Lory",
+				"dob": "2016-03-05",
+				"sex": "F",
+				"breed": "49"
+			},
+			{
+				"animal_id": "7",
+				"animal_name_or_tag": "Myrtice",
+				"dob": "2014-11-28",
+				"sex": "F",
+				"breed": "25"
+			},
+			{
+				"animal_id": "8",
+				"animal_name_or_tag": "Katleen",
+				"dob": "2006-11-17",
+				"sex": "F",
+				"breed": "8"
+			},
+			{
+				"animal_id": "9",
+				"animal_name_or_tag": "Barbara",
+				"dob": "2012-01-25",
+				"sex": "F",
+				"breed": "69"
+			},
+			{
+				"animal_id": "10",
+				"animal_name_or_tag": "Ellette",
+				"dob": "2007-10-16",
+				"sex": "M",
+				"breed": "56"
+			},
+			{
+				"animal_id": "11",
+				"animal_name_or_tag": "Vonny",
+				"dob": "2001-11-09",
+				"sex": "M",
+				"breed": "36"
+			},
+			{
+				"animal_id": "12",
+				"animal_name_or_tag": "Myriam",
+				"dob": "2010-11-09",
+				"sex": "M",
+				"breed": "59"
+			},
+			{
+				"animal_id": "13",
+				"animal_name_or_tag": "Amara",
+				"dob": "2006-06-19",
+				"sex": "M",
+				"breed": "80"
+			},
+			{
+				"animal_id": "14",
+				"animal_name_or_tag": "Jessy",
+				"dob": "2009-11-29",
+				"sex": "F",
+				"breed": "50"
+			},
+			{
+				"animal_id": "15",
+				"animal_name_or_tag": "Mara",
+				"dob": "2010-04-29",
+				"sex": "F",
+				"breed": "36"
+			},
+			{
+				"animal_id": "16",
+				"animal_name_or_tag": "Brooks",
+				"dob": "2013-01-17",
+				"sex": "M",
+				"breed": "48"
+			},
+			{
+				"animal_id": "17",
+				"animal_name_or_tag": "Melanie",
+				"dob": "2015-12-23",
+				"sex": "M",
+				"breed": "13"
+			},
+			{
+				"animal_id": "18",
+				"animal_name_or_tag": "Lilith",
+				"dob": "2007-03-26",
+				"sex": "M",
+				"breed": "48"
+			},
+			{
+				"animal_id": "19",
+				"animal_name_or_tag": "Tamqrah",
+				"dob": "2000-08-22",
+				"sex": "M",
+				"breed": "80"
+			}
+		]
+	},
+	{
+		"farm_id": "1",
+		"farmName": "KangFarm",
+		"areaInMetresSquared": "394312",
+		"farm_profile": "shamba2",
+		"latitude": "59.178",
+		"longitude": "35.559",
+		"county_code": "4",
+		"schedule": [
+			{
+				"schedule_id": "0",
+				"schedule_activity_name": "immunization",
+				"schedule_date": "2022-09-12",
+				"animal_id": "3"
+			},
+			{
+				"schedule_id": "1",
+				"schedule_activity_name": "checkup",
+				"schedule_date": "2022-10-14",
+				"animal_id": "20"
+			},
+			{
+				"schedule_id": "2",
+				"schedule_activity_name": "dip",
+				"schedule_date": "2022-10-12",
+				"animal_id": "15"
+			},
+			{
+				"schedule_id": "3",
+				"schedule_activity_name": "dip",
+				"schedule_date": "2022-12-09",
+				"animal_id": "19"
+			},
+			{
+				"schedule_id": "4",
+				"schedule_activity_name": "dip",
+				"schedule_date": "2022-11-05",
+				"animal_id": "8"
+			},
+			{
+				"schedule_id": "5",
+				"schedule_activity_name": "tagging",
+				"schedule_date": "2022-12-07",
+				"animal_id": "10"
+			},
+			{
+				"schedule_id": "6",
+				"schedule_activity_name": "checkup",
+				"schedule_date": "2022-08-11",
+				"animal_id": "11"
+			},
+			{
+				"schedule_id": "7",
+				"schedule_activity_name": "dip",
+				"schedule_date": "2022-10-09",
+				"animal_id": "16"
+			},
+			{
+				"schedule_id": "8",
+				"schedule_activity_name": "dip",
+				"schedule_date": "2022-09-07",
+				"animal_id": "4"
+			},
+			{
+				"schedule_id": "9",
+				"schedule_activity_name": "tagging",
+				"schedule_date": "2022-11-06",
+				"animal_id": "10"
+			}
+		],
+		"animals": [
+			{
+				"animal_id": "0",
+				"animal_name_or_tag": "Shell",
+				"dob": "2003-08-31",
+				"sex": "F",
+				"breed": "36"
+			},
+			{
+				"animal_id": "1",
+				"animal_name_or_tag": "Ada",
+				"dob": "2012-12-21",
+				"sex": "M",
+				"breed": "58"
+			},
+			{
+				"animal_id": "2",
+				"animal_name_or_tag": "Jessamyn",
+				"dob": "2016-10-01",
+				"sex": "M",
+				"breed": "41"
+			},
+			{
+				"animal_id": "3",
+				"animal_name_or_tag": "Wileen",
+				"dob": "2013-04-26",
+				"sex": "F",
+				"breed": "74"
+			},
+			{
+				"animal_id": "4",
+				"animal_name_or_tag": "Phedra",
+				"dob": "2009-06-21",
+				"sex": "F",
+				"breed": "63"
+			},
+			{
+				"animal_id": "5",
+				"animal_name_or_tag": "Kenna",
+				"dob": "2001-03-10",
+				"sex": "M",
+				"breed": "47"
+			},
+			{
+				"animal_id": "6",
+				"animal_name_or_tag": "Ida",
+				"dob": "2009-03-16",
+				"sex": "F",
+				"breed": "3"
+			},
+			{
+				"animal_id": "7",
+				"animal_name_or_tag": "Lynea",
+				"dob": "2001-07-29",
+				"sex": "F",
+				"breed": "28"
+			},
+			{
+				"animal_id": "8",
+				"animal_name_or_tag": "Elyssa",
+				"dob": "2001-02-12",
+				"sex": "M",
+				"breed": "32"
+			},
+			{
+				"animal_id": "9",
+				"animal_name_or_tag": "Jsandye",
+				"dob": "2018-03-24",
+				"sex": "M",
+				"breed": "28"
+			},
+			{
+				"animal_id": "10",
+				"animal_name_or_tag": "Nessie",
+				"dob": "2018-12-24",
+				"sex": "F",
+				"breed": "39"
+			},
+			{
+				"animal_id": "11",
+				"animal_name_or_tag": "Lynde",
+				"dob": "2007-06-25",
+				"sex": "M",
+				"breed": "41"
+			},
+			{
+				"animal_id": "12",
+				"animal_name_or_tag": "Nadine",
+				"dob": "2013-07-18",
+				"sex": "F",
+				"breed": "21"
+			},
+			{
+				"animal_id": "13",
+				"animal_name_or_tag": "Julieta",
+				"dob": "2011-03-09",
+				"sex": "F",
+				"breed": "22"
+			},
+			{
+				"animal_id": "14",
+				"animal_name_or_tag": "Babita",
+				"dob": "2000-05-27",
+				"sex": "F",
+				"breed": "71"
+			},
+			{
+				"animal_id": "15",
+				"animal_name_or_tag": "Tomasina",
+				"dob": "2013-07-26",
+				"sex": "F",
+				"breed": "55"
+			},
+			{
+				"animal_id": "16",
+				"animal_name_or_tag": "Jinny",
+				"dob": "2004-02-15",
+				"sex": "M",
+				"breed": "46"
+			},
+			{
+				"animal_id": "17",
+				"animal_name_or_tag": "Nessie",
+				"dob": "2014-04-30",
+				"sex": "M",
+				"breed": "64"
+			},
+			{
+				"animal_id": "18",
+				"animal_name_or_tag": "Verla",
+				"dob": "2004-04-02",
+				"sex": "F",
+				"breed": "16"
+			},
+			{
+				"animal_id": "19",
+				"animal_name_or_tag": "Amelia",
+				"dob": "2006-01-10",
+				"sex": "F",
+				"breed": "40"
+			}
+		]
+	},
+	{
+		"farm_id": "2",
+		"farmName": "kangetheRanch",
+		"areaInMetresSquared": "520637",
+		"farm_profile": "shamba1",
+		"latitude": "45.274",
+		"longitude": "93.602",
+		"county_code": "7",
+		"schedule": [
+			{
+				"schedule_id": "0",
+				"schedule_activity_name": "tagging",
+				"schedule_date": "2022-10-31",
+				"animal_id": "4"
+			},
+			{
+				"schedule_id": "1",
+				"schedule_activity_name": "dip",
+				"schedule_date": "2022-12-27",
+				"animal_id": "1"
+			},
+			{
+				"schedule_id": "2",
+				"schedule_activity_name": "tagging",
+				"schedule_date": "2022-12-06",
+				"animal_id": "5"
+			},
+			{
+				"schedule_id": "3",
+				"schedule_activity_name": "checkup",
+				"schedule_date": "2022-08-03",
+				"animal_id": "7"
+			},
+			{
+				"schedule_id": "4",
+				"schedule_activity_name": "checkup",
+				"schedule_date": "2022-10-07",
+				"animal_id": "9"
+			},
+			{
+				"schedule_id": "5",
+				"schedule_activity_name": "tagging",
+				"schedule_date": "2022-11-25",
+				"animal_id": "6"
+			},
+			{
+				"schedule_id": "6",
+				"schedule_activity_name": "dip",
+				"schedule_date": "2022-09-08",
+				"animal_id": "4"
+			},
+			{
+				"schedule_id": "7",
+				"schedule_activity_name": "immunization",
+				"schedule_date": "2022-12-09",
+				"animal_id": "13"
+			},
+			{
+				"schedule_id": "8",
+				"schedule_activity_name": "tagging",
+				"schedule_date": "2022-12-05",
+				"animal_id": "7"
+			},
+			{
+				"schedule_id": "9",
+				"schedule_activity_name": "dip",
+				"schedule_date": "2022-08-06",
+				"animal_id": "15"
+			}
+		],
+		"animals": [
+			{
+				"animal_id": "0",
+				"animal_name_or_tag": "Etta",
+				"dob": "2002-08-15",
+				"sex": "F",
+				"breed": "48"
+			},
+			{
+				"animal_id": "1",
+				"animal_name_or_tag": "Ulrike",
+				"dob": "2008-07-21",
+				"sex": "F",
+				"breed": "13"
+			},
+			{
+				"animal_id": "2",
+				"animal_name_or_tag": "Dede",
+				"dob": "2004-12-23",
+				"sex": "F",
+				"breed": "69"
+			},
+			{
+				"animal_id": "3",
+				"animal_name_or_tag": "Babita",
+				"dob": "2000-10-15",
+				"sex": "M",
+				"breed": "22"
+			},
+			{
+				"animal_id": "4",
+				"animal_name_or_tag": "Genovera",
+				"dob": "2002-07-25",
+				"sex": "F",
+				"breed": "50"
+			},
+			{
+				"animal_id": "5",
+				"animal_name_or_tag": "Kaia",
+				"dob": "2013-11-16",
+				"sex": "F",
+				"breed": "30"
+			},
+			{
+				"animal_id": "6",
+				"animal_name_or_tag": "Nonnah",
+				"dob": "2015-09-21",
+				"sex": "F",
+				"breed": "57"
+			},
+			{
+				"animal_id": "7",
+				"animal_name_or_tag": "Sissy",
+				"dob": "2010-03-12",
+				"sex": "F",
+				"breed": "62"
+			},
+			{
+				"animal_id": "8",
+				"animal_name_or_tag": "Camile",
+				"dob": "2010-12-10",
+				"sex": "M",
+				"breed": "42"
+			},
+			{
+				"animal_id": "9",
+				"animal_name_or_tag": "Raquela",
+				"dob": "2013-11-06",
+				"sex": "F",
+				"breed": "55"
+			},
+			{
+				"animal_id": "10",
+				"animal_name_or_tag": "Janis",
+				"dob": "2015-08-23",
+				"sex": "M",
+				"breed": "6"
+			},
+			{
+				"animal_id": "11",
+				"animal_name_or_tag": "Ericka",
+				"dob": "2010-04-19",
+				"sex": "F",
+				"breed": "41"
+			},
+			{
+				"animal_id": "12",
+				"animal_name_or_tag": "Corly",
+				"dob": "2001-11-07",
+				"sex": "F",
+				"breed": "41"
+			},
+			{
+				"animal_id": "13",
+				"animal_name_or_tag": "Heddie",
+				"dob": "2012-06-02",
+				"sex": "F",
+				"breed": "47"
+			},
+			{
+				"animal_id": "14",
+				"animal_name_or_tag": "Helena",
+				"dob": "2003-06-26",
+				"sex": "F",
+				"breed": "74"
+			},
+			{
+				"animal_id": "15",
+				"animal_name_or_tag": "Desirae",
+				"dob": "2010-02-20",
+				"sex": "M",
+				"breed": "30"
+			},
+			{
+				"animal_id": "16",
+				"animal_name_or_tag": "Linzy",
+				"dob": "2014-08-31",
+				"sex": "F",
+				"breed": "61"
+			},
+			{
+				"animal_id": "17",
+				"animal_name_or_tag": "Wendi",
+				"dob": "2009-11-03",
+				"sex": "F",
+				"breed": "26"
+			},
+			{
+				"animal_id": "18",
+				"animal_name_or_tag": "Gaylene",
+				"dob": "2015-09-22",
+				"sex": "F",
+				"breed": "32"
+			},
+			{
+				"animal_id": "19",
+				"animal_name_or_tag": "Odessa",
+				"dob": "2007-06-26",
+				"sex": "F",
+				"breed": "37"
+			}
+		]
+	}
+]
