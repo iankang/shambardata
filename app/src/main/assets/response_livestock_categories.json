@@ -1,0 +1,42 @@
+[
+  {
+    "species": "Ass",
+    "id": 1,
+    "image": "donkey.jpg"
+  },
+  {
+    "species": "Cattle",
+    "id": 2,
+    "image": "cow.jpg"
+  },
+  {
+    "species": "Chicken",
+    "id": 3,
+    "image": "chicken.jpg"
+  },
+  {
+    "species": "Dromedary",
+    "id": 4,
+    "image": "camel.jpg"
+  },
+  {
+    "species": "Goat",
+    "id": 5,
+    "image": "goat.jpg"
+  },
+  {
+    "species": "Pig",
+    "id": 6,
+    "image": "pig.jpg"
+  },
+  {
+    "species": "Rabbit",
+    "id": 7,
+    "image": "rabbit.jpg"
+  },
+  {
+    "species": "Sheep",
+    "id": 8,
+    "image": "sheep.jpg"
+  }
+]

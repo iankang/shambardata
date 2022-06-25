@@ -22,11 +22,14 @@ import com.example.shambadata.viewmodels.EventsViewModel
 
 @Composable
 fun EventsScreen(
-    eventsViewModel: EventsViewModel
+    eventsViewModel: EventsViewModel,
+    innerPadding: PaddingValues
 ) {
     eventsViewModel.addSchedules()
     Log.e("scheduleList", eventsViewModel.scheduleList.toString())
-    LazyColumn {
+    LazyColumn(
+        contentPadding = innerPadding
+    ) {
         items(items = eventsViewModel.scheduleList, itemContent = {
             EventItemCard(
                 it
@@ -36,8 +39,6 @@ fun EventsScreen(
 }
 
 @Composable
-//@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO)
-//@Preview(name = "night", uiMode = UI_MODE_NIGHT_YES)
 fun EventItemCard(schedule: Schedule) {
     ShambaDataTheme {
         Card(
@@ -46,21 +47,29 @@ fun EventItemCard(schedule: Schedule) {
                 .padding(8.dp),
             backgroundColor = MaterialTheme.colors.background
         ) {
-            Column(
+            Row(
                 modifier = Modifier.fillMaxWidth()
-                    .padding(horizontal = 12.dp),
-                horizontalAlignment = Alignment.Start
             ) {
-                Text(
-                    text = schedule.scheduleActivityName!!,
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
+                Column(
+                    modifier = Modifier
+                        .padding(12.dp),
+                    horizontalAlignment = Alignment.Start
+                ) {
+                    Text(
+                        text = schedule.scheduleActivityName!!,
+                        fontSize = 30.sp,
+                        fontWeight = FontWeight.Bold,
 
-                )
-                
-                Text(
-                    text = schedule?.scheduleDate!!
-                )
+                        )
+
+                    Text(
+                        text = schedule.scheduleDate!!
+                    )
+                }
+
+                Column() {
+
+                }
             }
         }
     }
@@ -68,18 +77,48 @@ fun EventItemCard(schedule: Schedule) {
 }
 
 @Composable
-fun EventItem(schedule: Schedule? = null) {
-    Card {
-        Text(text = schedule?.scheduleActivityName!!)
+@Preview(name = "infoday", uiMode = UI_MODE_NIGHT_NO, showBackground = true)
+@Preview(name = "infonight", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
+fun EventCardInfo(){
+    ShambaDataTheme {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
+            backgroundColor = MaterialTheme.colors.background
+        ) {
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text = "Dip",
+                    fontSize = 30.sp,
+                    fontWeight = FontWeight.Bold,
+
+                    )
+
+                Text(
+                    text = "24/07/2022",
+                    modifier = Modifier.align(Alignment.CenterVertically)
+                )
+            }
+
+            Row {
+
+            }
+        }
     }
 }
 
-//@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO, showBackground = true)
-//@Preview(name = "night", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
-//@Composable
-//fun EventsScreenPreview() {
-//    ShambaDataTheme {
-//        EventsScreen()
-//    }
-//
-//}
+@Composable
+@Preview(name = "day", uiMode = UI_MODE_NIGHT_NO, showBackground = true)
+@Preview(name = "night", uiMode = UI_MODE_NIGHT_YES, showBackground = true)
+fun EventItem(schedule: Schedule? = Schedule(
+    scheduleActivityName = "Dip",
+    scheduleDate = "24/07/2022",
+    animalId = "2",
+    scheduleId = "4"
+
+)) {
+    EventItemCard(schedule = schedule!!)
+}

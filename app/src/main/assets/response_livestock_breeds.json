@@ -1,0 +1,650 @@
+[
+  {
+    "breed": "Masai",
+    "id": 1,
+    "livestockCategory": {
+      "species": "Ass",
+      "id": 1
+    }
+  },
+  {
+    "breed": "Somali",
+    "id": 2,
+    "livestockCategory": {
+      "species": "Ass",
+      "id": 1
+    }
+  },
+  {
+    "breed": "Aberdeen Angus",
+    "id": 3,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Ayrshire",
+    "id": 4,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Belgian blue",
+    "id": 5,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Boran",
+    "id": 6,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Brown Swiss",
+    "id": 7,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Charolais",
+    "id": 8,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Dexter",
+    "id": 9,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Duruma",
+    "id": 10,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Ethiopian Boran",
+    "id": 11,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Friesian",
+    "id": 12,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Galloway",
+    "id": 13,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Giriama",
+    "id": 14,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Guernsey",
+    "id": 15,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Hereford",
+    "id": 16,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Jersey",
+    "id": 17,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Jiddu",
+    "id": 18,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Kamasia",
+    "id": 19,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Kamba",
+    "id": 20,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Karapokot",
+    "id": 21,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Kenya Boran",
+    "id": 22,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Kikuyu",
+    "id": 23,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Masai",
+    "id": 24,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "NFD Boran",
+    "id": 25,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Nandi",
+    "id": 26,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Orma Boran",
+    "id": 27,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Red Poll",
+    "id": 28,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Sahiwal",
+    "id": 29,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Samburu",
+    "id": 30,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Santa Gertrudis",
+    "id": 31,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Simmental",
+    "id": 32,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Suk",
+    "id": 33,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Teso",
+    "id": 34,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Tuni",
+    "id": 35,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Turkana",
+    "id": 36,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Watende",
+    "id": 37,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Winam",
+    "id": 38,
+    "livestockCategory": {
+      "species": "Cattle",
+      "id": 2
+    }
+  },
+  {
+    "breed": "Kenyan Indigenous Chicken",
+    "id": 39,
+    "livestockCategory": {
+      "species": "Chicken",
+      "id": 3
+    }
+  },
+  {
+    "breed": "Naked neck Frizzle Feathered",
+    "id": 40,
+    "livestockCategory": {
+      "species": "Chicken",
+      "id": 3
+    }
+  },
+  {
+    "breed": "Red Leghorn",
+    "id": 41,
+    "livestockCategory": {
+      "species": "Chicken",
+      "id": 3
+    }
+  },
+  {
+    "breed": "Rhode Island Red",
+    "id": 42,
+    "livestockCategory": {
+      "species": "Chicken",
+      "id": 3
+    }
+  },
+  {
+    "breed": "Sussex",
+    "id": 43,
+    "livestockCategory": {
+      "species": "Chicken",
+      "id": 3
+    }
+  },
+  {
+    "breed": "White Leghorn",
+    "id": 44,
+    "livestockCategory": {
+      "species": "Chicken",
+      "id": 3
+    }
+  },
+  {
+    "breed": "Rendille",
+    "id": 45,
+    "livestockCategory": {
+      "species": "Dromedary",
+      "id": 4
+    }
+  },
+  {
+    "breed": "Somali",
+    "id": 46,
+    "livestockCategory": {
+      "species": "Dromedary",
+      "id": 4
+    }
+  },
+  {
+    "breed": "Turkana",
+    "id": 47,
+    "livestockCategory": {
+      "species": "Dromedary",
+      "id": 4
+    }
+  },
+  {
+    "breed": "Alpine",
+    "id": 48,
+    "livestockCategory": {
+      "species": "Goat",
+      "id": 5
+    }
+  },
+  {
+    "breed": "Anglo-Nubian",
+    "id": 49,
+    "livestockCategory": {
+      "species": "Goat",
+      "id": 5
+    }
+  },
+  {
+    "breed": "Angora Goat",
+    "id": 50,
+    "livestockCategory": {
+      "species": "Goat",
+      "id": 5
+    }
+  },
+  {
+    "breed": "Black Bedouin",
+    "id": 51,
+    "livestockCategory": {
+      "species": "Goat",
+      "id": 5
+    }
+  },
+  {
+    "breed": "Boran",
+    "id": 52,
+    "livestockCategory": {
+      "species": "Goat",
+      "id": 5
+    }
+  },
+  {
+    "breed": "Oberhosli",
+    "id": 53,
+    "livestockCategory": {
+      "species": "Goat",
+      "id": 5
+    }
+  },
+  {
+    "breed": "Saanen",
+    "id": 54,
+    "livestockCategory": {
+      "species": "Goat",
+      "id": 5
+    }
+  },
+  {
+    "breed": "Small East African",
+    "id": 55,
+    "livestockCategory": {
+      "species": "Goat",
+      "id": 5
+    }
+  },
+  {
+    "breed": "Somali",
+    "id": 56,
+    "livestockCategory": {
+      "species": "Goat",
+      "id": 5
+    }
+  },
+  {
+    "breed": "Toggenburg",
+    "id": 57,
+    "livestockCategory": {
+      "species": "Goat",
+      "id": 5
+    }
+  },
+  {
+    "breed": "Hampshire",
+    "id": 58,
+    "livestockCategory": {
+      "species": "Pig",
+      "id": 6
+    }
+  },
+  {
+    "breed": "Landrace",
+    "id": 59,
+    "livestockCategory": {
+      "species": "Pig",
+      "id": 6
+    }
+  },
+  {
+    "breed": "Large White",
+    "id": 60,
+    "livestockCategory": {
+      "species": "Pig",
+      "id": 6
+    }
+  },
+  {
+    "breed": "Angora",
+    "id": 61,
+    "livestockCategory": {
+      "species": "Rabbit",
+      "id": 7
+    }
+  },
+  {
+    "breed": "California White",
+    "id": 62,
+    "livestockCategory": {
+      "species": "Rabbit",
+      "id": 7
+    }
+  },
+  {
+    "breed": "Flemish giant",
+    "id": 63,
+    "livestockCategory": {
+      "species": "Rabbit",
+      "id": 7
+    }
+  },
+  {
+    "breed": "Kenyan White",
+    "id": 64,
+    "livestockCategory": {
+      "species": "Rabbit",
+      "id": 7
+    }
+  },
+  {
+    "breed": "New Zealand White",
+    "id": 65,
+    "livestockCategory": {
+      "species": "Rabbit",
+      "id": 7
+    }
+  },
+  {
+    "breed": "Blackhead Persian",
+    "id": 66,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Corriedale",
+    "id": 67,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Dorper",
+    "id": 68,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "East African Long-tailed",
+    "id": 69,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Hampshire",
+    "id": 70,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Kenian Samburu",
+    "id": 71,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Kipsigis",
+    "id": 72,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Luo",
+    "id": 73,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Masai",
+    "id": 74,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Merino",
+    "id": 75,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Nandi",
+    "id": 76,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Romney Marsh",
+    "id": 77,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Somali",
+    "id": 78,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "South Down",
+    "id": 79,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Suffolk",
+    "id": 80,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  },
+  {
+    "breed": "Sussex",
+    "id": 81,
+    "livestockCategory": {
+      "species": "Sheep",
+      "id": 8
+    }
+  }
+]

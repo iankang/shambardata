@@ -10,11 +10,13 @@ import com.example.shambadata.models.ShambaDataResponseItem
 class EventsViewModel(val shambaDataJson: List<ShambaDataResponseItem>) : ViewModel() {
 
     var scheduleList = mutableListOf<Schedule>()
+    var animalList = mutableListOf<Animal>()
 
     fun addSchedules(){
         shambaDataJson.forEach { shambaDataResponseItem: ShambaDataResponseItem ->
             shambaDataResponseItem.schedule?.forEach { schedule: Schedule ->
                 scheduleList.add(schedule)
+                schedule.animalId
             }
         }
 

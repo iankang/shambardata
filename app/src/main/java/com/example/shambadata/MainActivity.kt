@@ -45,15 +45,15 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val navController = rememberNavController()
 
-                    NavHost(navController, startDestination = AuthNavigationScreens.Login.route) {
-                        composable(AuthNavigationScreens.Login.route) {
-                            LoginScreen(
-                                navController,
-                                loginViewModel,
-                                sessionManager
-                            )
-                        }
-                        composable(AuthNavigationScreens.Register.route) { Register(navController) }
+                    NavHost(navController, startDestination = AuthNavigationScreens.Main.route) {
+//                        composable(AuthNavigationScreens.Login.route) {
+//                            LoginScreen(
+//                                navController,
+//                                loginViewModel,
+//                                sessionManager
+//                            )
+//                        }
+//                        composable(AuthNavigationScreens.Register.route) { Register(navController) }
                         composable(AuthNavigationScreens.Main.route) {
                             HomeScreen(
                                 navController,

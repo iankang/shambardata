@@ -1,5 +1,6 @@
 package com.example.shambadata.navigation
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -25,17 +26,18 @@ fun MainNavHost(
     authController: NavController,
     navController: NavHostController,
     eventsViewModel: EventsViewModel,
-    farmsViewModel: FarmViewModel
+    farmsViewModel: FarmViewModel,
+    innerPadding: PaddingValues
 ){
     NavHost(navController = navController, startDestination = BottomNavigation.Events.route ){
         composable(BottomNavigation.Events.route) {
-            EventsScreen(eventsViewModel)
+            EventsScreen(eventsViewModel, innerPadding)
         }
         composable(BottomNavigation.Animals.route) {
             LiveStockScreen()
         }
         composable(BottomNavigation.Farms.route) {
-            FarmsScreen(farmsViewModel)
+            FarmsScreen(farmsViewModel,innerPadding)
         }
         composable(BottomNavigation.Stats.route) {
             StatsScreen()

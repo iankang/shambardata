@@ -36,7 +36,8 @@ fun HomeScreen(
             authController = authController,
             navController = navController,
             eventsViewModel = eventsViewModel,
-            farmsViewModel = farmsViewModel
+            farmsViewModel = farmsViewModel,
+            innerPadding
         )
     }
 }
