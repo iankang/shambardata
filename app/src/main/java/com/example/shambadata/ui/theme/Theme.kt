@@ -10,7 +10,7 @@ import androidx.compose.ui.input.key.Key.Companion.G
 
 private val DarkColorPalette = darkColors(
     primary = Grey500,
-    primaryVariant = Grey700,
+    primaryVariant =LightGrey700,
     secondary = Green500,
     secondaryVariant = Green700,
     onSecondary = Color.Black,

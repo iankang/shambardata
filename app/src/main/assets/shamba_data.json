@@ -1,7 +1,7 @@
 [
 	{
 		"farm_id": "0",
-		"farmName": "KangFarm",
+		"farmName": "Great Farm",
 		"areaInMetresSquared": "777090",
 		"farm_profile": "shamba",
 		"latitude": "52.458",
@@ -427,7 +427,7 @@
 	},
 	{
 		"farm_id": "2",
-		"farmName": "kangetheRanch",
+		"farmName": "Fuego Ranch",
 		"areaInMetresSquared": "520637",
 		"farm_profile": "shamba1",
 		"latitude": "45.274",

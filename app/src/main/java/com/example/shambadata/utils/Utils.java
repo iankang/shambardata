@@ -2,6 +2,7 @@ package com.example.shambadata.utils;
 
 import android.content.Context;
 
+import com.example.shambadata.models.CountiesResponse;
 import com.example.shambadata.models.LiveStockBreedResponse;
 import com.example.shambadata.models.LiveStockCategoryResponse;
 import com.example.shambadata.models.ShambaDataResponse;
@@ -80,6 +81,30 @@ public class Utils {
 
             Gson gson = new Gson();
             Type theType = new TypeToken<LiveStockCategoryResponse>(){}.getType();
+            theInput = gson.fromJson(jsonString, theType);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return theInput;
+    }
+
+    public static CountiesResponse getCountiesDataJsonFromAssets(Context context, String fileName) {
+        String jsonString;
+        CountiesResponse theInput;
+        try {
+            InputStream is = context.getAssets().open(fileName);
+
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            jsonString = new String(buffer, "UTF-8");
+
+            Gson gson = new Gson();
+            Type theType = new TypeToken<CountiesResponse>(){}.getType();
             theInput = gson.fromJson(jsonString, theType);
         } catch (IOException e) {
             e.printStackTrace();

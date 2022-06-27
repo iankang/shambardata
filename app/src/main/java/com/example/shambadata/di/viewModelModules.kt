@@ -17,6 +17,6 @@ val viewModelModule = module {
         EventsViewModel(get())
     }
     viewModel {
-        FarmViewModel(get())
+        FarmViewModel(get(), get())
     }
 }
