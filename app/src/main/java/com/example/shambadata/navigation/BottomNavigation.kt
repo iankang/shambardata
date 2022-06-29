@@ -13,6 +13,7 @@ import com.example.shambadata.screens.LiveStockScreen
 import com.example.shambadata.screens.StatsScreen
 import com.example.shambadata.viewmodels.EventsViewModel
 import com.example.shambadata.viewmodels.FarmViewModel
+import com.example.shambadata.viewmodels.LivestockViewModel
 
 sealed class BottomNavigation(var route:String, var icon:Int, var title:String){
     object Events: BottomNavigation("events", R.drawable.ic_baseline_list_alt_24, "Events")
@@ -27,14 +28,15 @@ fun MainNavHost(
     navController: NavHostController,
     eventsViewModel: EventsViewModel,
     farmsViewModel: FarmViewModel,
-    innerPadding: PaddingValues
+    livestockViewModel: LivestockViewModel,
+    innerPadding: PaddingValues,
 ){
     NavHost(navController = navController, startDestination = BottomNavigation.Events.route ){
         composable(BottomNavigation.Events.route) {
             EventsScreen(eventsViewModel, innerPadding)
         }
         composable(BottomNavigation.Animals.route) {
-            LiveStockScreen()
+            LiveStockScreen(livestockViewModel, innerPadding)
         }
         composable(BottomNavigation.Farms.route) {
             FarmsScreen(farmsViewModel,innerPadding)

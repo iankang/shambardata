@@ -10,12 +10,14 @@ import androidx.navigation.compose.rememberNavController
 import com.example.shambadata.navigation.MainNavHost
 import com.example.shambadata.viewmodels.EventsViewModel
 import com.example.shambadata.viewmodels.FarmViewModel
+import com.example.shambadata.viewmodels.LivestockViewModel
 
 @Composable
 fun HomeScreen(
     authController: NavController,
     eventsViewModel: EventsViewModel,
-    farmsViewModel: FarmViewModel
+    farmsViewModel: FarmViewModel,
+    livestockViewModel: LivestockViewModel
 ) {
     val navController = rememberNavController()
     val scaffoldState = rememberScaffoldState()
@@ -37,6 +39,7 @@ fun HomeScreen(
             navController = navController,
             eventsViewModel = eventsViewModel,
             farmsViewModel = farmsViewModel,
+            livestockViewModel = livestockViewModel,
             innerPadding
         )
     }

@@ -11,3 +11,12 @@ data class LiveStockBreedResponseItem(
     @SerializedName("livestockCategory")
     var livestockCategory: LivestockCategory? = null
 )
+
+fun LiveStockBreedResponseItem.toLivestockAndBreed() : LivestockAndBreedItem {
+    return  LivestockAndBreedItem(
+        breed = breed,
+        breedId = id,
+        categoryId = livestockCategory?.id,
+        species = livestockCategory?.species
+    )
+}

@@ -15,3 +15,13 @@ data class Animal(
     @SerializedName("sex")
     var sex: String? = null
 )
+
+
+fun Animal.toAnimalItem():AnimalItem {
+    return AnimalItem(
+        animalId = animalId,
+        animalNameOrTag = animalNameOrTag,
+        dob = dob,
+        sex = sex
+    )
+}

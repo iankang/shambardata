@@ -2,41 +2,41 @@
   {
     "species": "Ass",
     "id": 1,
-    "image": "donkey.jpg"
+    "image": "donkey"
   },
   {
     "species": "Cattle",
     "id": 2,
-    "image": "cow.jpg"
+    "image": "cow"
   },
   {
     "species": "Chicken",
     "id": 3,
-    "image": "chicken.jpg"
+    "image": "chicken"
   },
   {
     "species": "Dromedary",
     "id": 4,
-    "image": "camel.jpg"
+    "image": "camel"
   },
   {
     "species": "Goat",
     "id": 5,
-    "image": "goat.jpg"
+    "image": "goat"
   },
   {
     "species": "Pig",
     "id": 6,
-    "image": "pig.jpg"
+    "image": "pig"
   },
   {
     "species": "Rabbit",
     "id": 7,
-    "image": "rabbit.jpg"
+    "image": "rabbit"
   },
   {
     "species": "Sheep",
     "id": 8,
-    "image": "sheep.jpg"
+    "image": "sheep"
   }
 ]

@@ -12,11 +12,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.shambadata.navigation.AuthNavigationScreens
 import com.example.shambadata.screens.HomeScreen
-import com.example.shambadata.screens.LoginScreen
-import com.example.shambadata.screens.Register
 import com.example.shambadata.ui.theme.ShambaDataTheme
 import com.example.shambadata.viewmodels.EventsViewModel
 import com.example.shambadata.viewmodels.FarmViewModel
+import com.example.shambadata.viewmodels.LivestockViewModel
 import com.example.shambadata.viewmodels.LoginViewModel
 import com.example.shambadataapi.repository.ShambaDataApi
 import com.example.shambadataapi.utils.SessionManager
@@ -29,6 +28,7 @@ class MainActivity : ComponentActivity() {
     private val loginViewModel by viewModel<LoginViewModel>()
     private val eventsViewModel by viewModel<EventsViewModel>()
     private val farmsViewModel by viewModel<FarmViewModel>()
+    private val livestockViewModel by viewModel<LivestockViewModel>()
 
     //    private val values:List<ShambaDataJSONResponse> by inject()
     private lateinit var sessionManager: SessionManager
@@ -58,7 +58,8 @@ class MainActivity : ComponentActivity() {
                             HomeScreen(
                                 navController,
                                 eventsViewModel = eventsViewModel,
-                                farmsViewModel = farmsViewModel
+                                farmsViewModel = farmsViewModel,
+                                livestockViewModel = livestockViewModel
                             )
                         }
                     }
