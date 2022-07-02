@@ -2,32 +2,13 @@ package com.example.shambadata.viewmodels
 
 
 import androidx.lifecycle.ViewModel
-import com.example.shambadata.models.Animal
-import com.example.shambadata.models.Schedule
-import com.example.shambadata.models.ShambaDataResponseItem
+import com.example.shambadata.data.DataWrangler
+import com.example.shambadata.models.*
+import com.example.shambadata.models.models_ui.FarmItem
+import com.example.shambadataapi.models.FarmsResponseItem
 
 
-class EventsViewModel(val shambaDataJson: List<ShambaDataResponseItem>) : ViewModel() {
+class EventsViewModel(val dataWrangler: DataWrangler) : ViewModel() {
 
-    var scheduleList = mutableListOf<Schedule>()
-    var animalList = mutableListOf<Animal>()
 
-    fun addSchedules(){
-        shambaDataJson.forEach { shambaDataResponseItem: ShambaDataResponseItem ->
-            shambaDataResponseItem.schedule?.forEach { schedule: Schedule ->
-                scheduleList.add(schedule)
-                schedule.animalId
-            }
-        }
-
-    }
-
-    fun getAnimalFromId(animalId:String){
-        shambaDataJson.forEach {shambaDataResponseItem: ShambaDataResponseItem ->
-            shambaDataResponseItem.animals?.forEach { animal: Animal ->
-                animal.animalId == animalId
-
-            }
-        }
-    }
 }

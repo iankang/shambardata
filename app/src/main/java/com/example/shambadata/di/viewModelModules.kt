@@ -17,9 +17,9 @@ val viewModelModule = module {
         EventsViewModel(get())
     }
     viewModel {
-        FarmViewModel(get(), get())
+        FarmViewModel(get())
     }
     viewModel {
-        LivestockViewModel(get(), get(), get())
+        LivestockViewModel(get())
     }
 }

@@ -19,3 +19,15 @@ data class FarmsResponseItem(
     @SerializedName("user")
     var user: User? = null
 )
+
+data class FarmResponseDTO(
+    var areaInMetresSquared: Int? = null,
+    var county: County? = null,
+    var createdAt: String? = null,
+    var farmName: String? = null,
+    var id: Int? = null,
+    var updatedAt: String? = null,
+    var user: User? = null
+){
+
+}

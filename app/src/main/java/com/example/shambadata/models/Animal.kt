@@ -21,6 +21,7 @@ fun Animal.toAnimalItem():AnimalItem {
     return AnimalItem(
         animalId = animalId,
         animalNameOrTag = animalNameOrTag,
+        breed = breed,
         dob = dob,
         sex = sex
     )

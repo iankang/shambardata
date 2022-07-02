@@ -1,6 +1,7 @@
 package com.example.shambadata.models
 
 
+import com.example.shambadata.models.models_ui.FarmItem
 import com.google.gson.annotations.SerializedName
 
 data class ShambaDataResponseItem(
@@ -23,3 +24,15 @@ data class ShambaDataResponseItem(
     @SerializedName("schedule")
     var schedule: List<Schedule>? = null
 )
+
+fun ShambaDataResponseItem.toFarmItem(): FarmItem {
+    return FarmItem(
+        areaInMetresSquared = areaInMetresSquared,
+        countyCode = countyCode,
+        farmId = farmId,
+        farmName = farmName,
+        farmProfile = farmProfile,
+        latitude = latitude,
+        longitude = longitude
+    )
+}

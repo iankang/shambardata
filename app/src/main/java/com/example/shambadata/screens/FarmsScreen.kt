@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.shambadata.models.ShambaDataResponseItem
+import com.example.shambadata.models.models_ui.FarmItem
 import com.example.shambadata.ui.theme.ShambaDataTheme
 import com.example.shambadata.viewmodels.FarmViewModel
 
@@ -39,16 +40,17 @@ fun FarmsScreen(farmsViewModel: FarmViewModel, innerPadding: PaddingValues) {
             .wrapContentSize(Alignment.Center),
         contentPadding = innerPadding
     ) {
-        items(items = farmsViewModel.farms) {
+        items(items = farmsViewModel.dataWrangler.farmMap.values.toList()) {
             FarmItem(it,farmsViewModel)
         }
     }
 }
 
 @Composable
-fun FarmItem(farm: ShambaDataResponseItem? = null,farmsViewModel: FarmViewModel? = null) {
+fun FarmItem(farm: FarmItem? = null,farmsViewModel: FarmViewModel? = null) {
     val context = LocalContext.current
-    val county = farmsViewModel?.getCountyFromCountyCode(farm?.countyCode!!)
+    farmsViewModel?.dataWrangler?.getCountyFromCode(farm?.countyCode?.toInt()!!)
+    val county = farmsViewModel?.dataWrangler?.county
     Log.e("county", county?.toString()!!)
     Card(
         modifier = Modifier
@@ -143,17 +145,17 @@ fun FarmLocation(countyCode: String? = null) {
 
 }
 
-@Preview(name = "day", uiMode = Configuration.UI_MODE_NIGHT_NO, showBackground = true)
-@Preview(name = "night", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
-@Composable
-fun FarmItemPreview() {
-    ShambaDataTheme {
-        FarmItem(
-            ShambaDataResponseItem(
-                areaInMetresSquared = "10000",
-                farmProfile = "shamba.jpg"
-            ),
-            null
-        )
-    }
-}
+//@Preview(name = "day", uiMode = Configuration.UI_MODE_NIGHT_NO, showBackground = true)
+//@Preview(name = "night", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
+//@Composable
+//fun FarmItemPreview() {
+//    ShambaDataTheme {
+//        FarmItem(
+//            ShambaDataResponseItem(
+//                areaInMetresSquared = "10000",
+//                farmProfile = "shamba.jpg"
+//            ),
+//            null
+//        )
+//    }
+//}

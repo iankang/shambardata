@@ -1,6 +1,7 @@
 package com.example.shambadata
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.shambadata.data.DataWrangler
 import com.example.shambadata.navigation.AuthNavigationScreens
 import com.example.shambadata.screens.HomeScreen
 import com.example.shambadata.ui.theme.ShambaDataTheme
@@ -29,12 +31,14 @@ class MainActivity : ComponentActivity() {
     private val eventsViewModel by viewModel<EventsViewModel>()
     private val farmsViewModel by viewModel<FarmViewModel>()
     private val livestockViewModel by viewModel<LivestockViewModel>()
+    private val dataWrangler:DataWrangler by inject<DataWrangler>()
 
     //    private val values:List<ShambaDataJSONResponse> by inject()
     private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.e("wrangler", dataWrangler.toString())
         sessionManager = SessionManager(this)
         setContent {
             ShambaDataTheme {

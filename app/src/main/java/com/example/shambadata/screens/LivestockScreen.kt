@@ -30,13 +30,14 @@ fun LiveStockScreen(
     livestockViewModel: LivestockViewModel? = null,
     innerPadding: PaddingValues? = null
 ) {
-    Log.e("livestock", livestockViewModel?.livestockCategory.toString())
+    Log.e("livestockAnimalItem", livestockViewModel?.dataWrangler?.animalMap.toString())
     val context = LocalContext.current
+    val livestockCategoryList = remember{ livestockViewModel?.dataWrangler?.livestockMap?.values?.toList()!! }
     LazyVerticalGrid(
         cells = GridCells.Fixed(2),
         contentPadding = innerPadding!!,
         content = {
-            items(livestockViewModel?.livestockCategory?.toList()!!) { item: LiveStockCategoryResponseItem ->
+            items(livestockCategoryList) { item: LiveStockCategoryResponseItem ->
                 val drawableId = remember(item.image) {
                     context.resources.getIdentifier(
                         item.image,

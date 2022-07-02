@@ -25,17 +25,17 @@ fun EventsScreen(
     eventsViewModel: EventsViewModel,
     innerPadding: PaddingValues
 ) {
-    eventsViewModel.addSchedules()
-    Log.e("scheduleList", eventsViewModel.scheduleList.toString())
-    LazyColumn(
-        contentPadding = innerPadding
-    ) {
-        items(items = eventsViewModel.scheduleList, itemContent = {
-            EventItemCard(
-                it
-            )
-        })
-    }
+
+    Log.e("scheduleList", eventsViewModel.dataWrangler.farmMap.toString())
+//    LazyColumn(
+//        contentPadding = innerPadding
+//    ) {
+//        items(items = eventsViewModel.scheduleList, itemContent = {
+//            EventItemCard(
+//                it
+//            )
+//        })
+//    }
 }
 
 @Composable
