@@ -16,6 +16,8 @@ class DataWrangler(
     var countiesMap = mutableMapOf<Int, CountiesResponseItem>()
     var breedIdLivestockBreedAndLivestockCategory = mutableMapOf<Int, LivestockAndBreedItem>()
     var livestockIdBreedAndLivestockItem = mutableMapOf<Int, MutableSet<LivestockAndBreedItem>>()
+    var farmSchedules = mutableSetOf<FarmItem>()
+    var onlySchedules = mutableSetOf<ScheduleItem>()
 
 
     var county: CountiesResponseItem? = null
@@ -28,8 +30,12 @@ class DataWrangler(
 
         shambaDataJson.forEach { shambaDataResponseItem: ShambaDataResponseItem ->
             val farmItem = shambaDataResponseItem.toFarmItem()
-            farmItem.animals = shambaDataResponseItem.animals?.map { item -> item.toAnimalItem() }
-            farmItem.schedule = shambaDataResponseItem.schedule
+            val animalItem = mutableSetOf<AnimalItem>()
+            val schedules = mutableSetOf<Schedule>()
+            shambaDataResponseItem.animals?.forEach { item -> animalItem.add(item.toAnimalItem()) }
+            shambaDataResponseItem.schedule?.forEach { schedule: Schedule -> schedules.add(schedule) }
+            farmItem.animals.addAll(animalItem)
+            farmItem.schedule.addAll(schedules)
             farmMap[shambaDataResponseItem.farmId?.toInt()!!] = shambaDataResponseItem.toFarmItem()
         }
 
@@ -69,12 +75,50 @@ class DataWrangler(
             livestockIdBreedAndLivestockItem[liveStockCategoryResponseItem.id!!] = categoryItems
         }
 
+        shambaDataJson.forEach { shambaDataResponseItem: ShambaDataResponseItem ->
+            val farmItem = shambaDataResponseItem.toFarmItem()
+            val animalItem = mutableSetOf<AnimalItem>()
+            shambaDataResponseItem.animals?.forEach { animal: Animal ->
+
+                val animal = animal.toAnimalItem()
+
+                val breedAndLivestockCat = getBreedAndLivestockCategoryFromBreedId(animal.breed!!)
+
+                val livestockCat = getLivestockCategoryResponseFromCategoryId(breedAndLivestockCat?.categoryId)
+                breedAndLivestockCat?.categoryImage = livestockCat?.image
+
+                animal.livestockAndBreedItem = breedAndLivestockCat
+                animalItem.add(animal)
+            }
+            farmItem.animals = animalItem
+            farmItem.schedule.addAll(shambaDataResponseItem.schedule!!)
+            farmSchedules.add(farmItem)
+        }
+
+        farmSchedules.forEach { farmItem: FarmItem ->
+
+            farmItem.schedule.forEach { schedule: Schedule ->
+                val scheduleItem = schedule.toScheduleItem()
+                val animalItem = animalMap[scheduleItem.animalId?.toInt()]
+                animalItem?.livestockAndBreedItem = getBreedAndLivestockCategoryFromBreedId(animalItem?.breed!!)
+                scheduleItem.animalItem = animalItem
+                onlySchedules.add(scheduleItem)
+            }
+
+        }
+
     }
 
     fun getCountyFromCode(code: Int) {
         county = countiesMap[code]
     }
 
+    fun getBreedAndLivestockCategoryFromBreedId(breedId: String): LivestockAndBreedItem? {
+        return breedIdLivestockBreedAndLivestockCategory[breedId.toInt()]
+    }
 
+    fun getLivestockCategoryResponseFromCategoryId(livestockId: Int?): LiveStockCategoryResponseItem? {
+        return livestockMap[livestockId!!]
+    }
 
 }

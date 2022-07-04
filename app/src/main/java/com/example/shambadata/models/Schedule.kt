@@ -13,3 +13,12 @@ data class Schedule(
     @SerializedName("schedule_id")
     var scheduleId: String? = null
 )
+
+fun Schedule.toScheduleItem():ScheduleItem{
+    return ScheduleItem(
+        animalId = animalId,
+        scheduleActivityName = scheduleActivityName,
+        scheduleDate = scheduleDate,
+        scheduleId = scheduleId
+    )
+}

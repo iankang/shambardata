@@ -12,8 +12,8 @@ data class FarmItem(
     var latitude: String? = null,
     var longitude: String? = null,
 ) {
-    var animals: List<AnimalItem>? = null
-    var schedule: List<Schedule>? = null
+    var animals = mutableSetOf<AnimalItem>()
+    var schedule = mutableSetOf<Schedule>()
     override fun toString(): String {
         return "FarmItem(areaInMetresSquared=$areaInMetresSquared, countyCode=$countyCode, farmId=$farmId, farmName=$farmName, farmProfile=$farmProfile, latitude=$latitude, longitude=$longitude, animals=$animals, schedule=$schedule)"
     }
